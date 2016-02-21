@@ -1,0 +1,18 @@
+PyLucene:
+https://lucene.apache.org/pylucene/install.html
+
+cd Lucene
+sudo make install
+
+
+BeautifulSoup:
+http://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup
+
+cd ../HTMLParser
+python setup.py install
+
+
+Flask:
+http://flask.pocoo.org/docs/0.10/installation/#installation
+
+pip install flask
