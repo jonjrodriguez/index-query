@@ -61,17 +61,17 @@ Usage:
 	2. Using command line options (from src directory)
 
 		index:
-			python indexer.py [-index INDEX_PATH] [-docs DOCS_PATH]
-		
-			optional arguments:
-		  	-index INDEX_PATH  The relative path where the index will be stored (default: index)
-		  	-docs DOCS_PATH    The relative path where the documents are stored (default: ../docs)
+		python indexer.py [-index INDEX_PATH] [-docs DOCS_PATH]
+	
+		optional arguments:
+	  	-index INDEX_PATH  The relative path where the index will be stored (default: index)
+	  	-docs DOCS_PATH    The relative path where the documents are stored (default: ../docs)
 
   		search:
-	  		python retriever.py [-index INDEX_PATH] QUERY
-	
-			positional arguments:
-			  QUERY              The query to use to search the index
-	
-			optional arguments:
-			  -index INDEX_PATH  The relative path where the index is stored (default: index)
+  		python retriever.py [-index INDEX_PATH] QUERY
+
+		positional arguments:
+		  QUERY              The query to use to search the index
+
+		optional arguments:
+		  -index INDEX_PATH  The relative path where the index is stored (default: index)
