@@ -25,10 +25,10 @@ Dependencies:
 
 Setup:
 	1. Build PyLucene on your system (located in Lucene and configured for Mac OSX 10.11)
-		Detailed instructions: https://lucene.apache.org/pylucene/install.html
+		https://lucene.apache.org/pylucene/install.html
 
 	2. Install BeautifulSoup
-		Detailed instructions: http://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup
+		http://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup
 
 		Quick instructions:
 			- pip install beautifulsoup4
@@ -37,7 +37,7 @@ Setup:
 			- python setup.py install
 
 	3. Install flask
-		Detailed instructions: http://flask.pocoo.org/docs/0.10/installation/#installation
+		http://flask.pocoo.org/docs/0.10/installation/#installation
 
 		Quick instructions:
 			- pip install flask
@@ -62,16 +62,16 @@ Usage:
 
 		index:
 			python indexer.py [-index INDEX_PATH] [-docs DOCS_PATH]
-
+		
 			optional arguments:
-	  		-index INDEX_PATH  The relative path where the index will be stored (default: index)
-	  		-docs DOCS_PATH    The relative path where the documents are stored (default: ../docs)
+		  	-index INDEX_PATH  The relative path where the index will be stored (default: index)
+		  	-docs DOCS_PATH    The relative path where the documents are stored (default: ../docs)
 
   		search:
 	  		python retriever.py [-index INDEX_PATH] QUERY
-
+	
 			positional arguments:
 			  QUERY              The query to use to search the index
-
+	
 			optional arguments:
 			  -index INDEX_PATH  The relative path where the index is stored (default: index)
