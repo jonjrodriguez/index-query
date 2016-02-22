@@ -1,18 +1,77 @@
-PyLucene:
-https://lucene.apache.org/pylucene/install.html
+Programming Assignment 1: Basic Indexing and Querying
 
-cd Lucene
-sudo make install
+Hosted Website:
+	http://search.jonjrodriguez.com
+	indexed example zipped directory
 
+Languages/Versions Used:
+	Python 2.7.11
+	PyLucene 4.10.1
 
-BeautifulSoup:
-http://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup
+File Structure:
+	src/: the index, code for indexer, and code for retriever
+	Lucene/: code of configured and compile PyLucene for Mac OSX 10.11
+	HTMLParser/: code for html parser (beautifulsoup4)
+	web/: code for web page
+	docs/: default location to store html files for indexing
+	run.py: utility file to easily run commands {index,search,serve}
 
-cd ../HTMLParser
-python setup.py install
+Dependencies:
+	BeautifulSoup (HTML Parser):
+	http://www.crummy.com/software/BeautifulSoup/
 
+	Flask (Web Microframework):
+	http://flask.pocoo.org/
 
-Flask:
-http://flask.pocoo.org/docs/0.10/installation/#installation
+Setup:
+	1. Build PyLucene on your system (located in Lucene and configured for Mac OSX 10.11)
+		Detailed instructions: https://lucene.apache.org/pylucene/install.html
 
-pip install flask
+	2. Install BeautifulSoup
+		Detailed instructions: http://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup
+
+		Quick instructions:
+			- pip install beautifulsoup4
+				OR
+			- cd HTMLParser
+			- python setup.py install
+
+	3. Install flask
+		Detailed instructions: http://flask.pocoo.org/docs/0.10/installation/#installation
+
+		Quick instructions:
+			- pip install flask
+
+Usage:
+	1. Using default options
+		python run.py {index, search, serve}
+
+		index:
+			Indexes any html files (.html or .htm extension) located in the docs folder
+			Index will be store in src/index
+
+		search:
+			Will search index stored in src/index
+			Command line will prompt you for your search query
+
+		serve:
+			Will launch local web server
+			Visit http://127.0.0.1:5000/ in browser
+
+	2. Using command line options (from src directory)
+
+		index:
+			python indexer.py [-index INDEX_PATH] [-docs DOCS_PATH]
+
+			optional arguments:
+	  		-index INDEX_PATH  The relative path where the index will be stored (default: index)
+	  		-docs DOCS_PATH    The relative path where the documents are stored (default: ../docs)
+
+  		search:
+	  		python retriever.py [-index INDEX_PATH] QUERY
+
+			positional arguments:
+			  QUERY              The query to use to search the index
+
+			optional arguments:
+			  -index INDEX_PATH  The relative path where the index is stored (default: index)
